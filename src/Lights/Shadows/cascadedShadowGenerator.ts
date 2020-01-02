@@ -622,10 +622,10 @@ export class CascadedShadowGenerator implements IShadowGenerator {
 
             // rounding the transform matrix to prevent shimmering artifacts from camera movement
             let shadowOrigin = Vector3.TransformCoordinates(Vector3.Zero(), this._transformMatrices[mapIndex]);
-            shadowOrigin = shadowOrigin.scale(this._mapSize / 2.0);
+            shadowOrigin.scaleInPlace(this._mapSize / 2.0);
             let roundedOrigin = new Vector3(Math.ceil(shadowOrigin.x), Math.ceil(shadowOrigin.y), Math.ceil(shadowOrigin.z));
             let roundOffset = roundedOrigin.subtract(shadowOrigin);
-            roundOffset = roundOffset.scale(2.0 / this._mapSize);
+            roundOffset.scaleInPlace(2.0 / this._mapSize);
             let roundMatrix = Matrix.Translation(roundOffset.x, roundOffset.y, 0.0);
             this._transformMatrices[mapIndex].multiplyToRef(roundMatrix, this._transformMatrices[mapIndex]);
         }
