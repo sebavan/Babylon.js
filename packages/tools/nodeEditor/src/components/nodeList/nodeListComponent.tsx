@@ -486,6 +486,7 @@ export class NodeListComponent extends React.Component<INodeListComponentProps, 
                 delete allBlocks["Procedural__Texture"];
                 delete allBlocks["GaussianSplatting"];
                 break;
+            case NodeMaterialModes.SFE:
             case NodeMaterialModes.PostProcess:
                 delete allBlocks["Animation"];
                 delete allBlocks["Mesh"];

@@ -330,7 +330,7 @@ export class TextureBlock extends NodeMaterialBlock {
 
     public override autoConfigure(material: NodeMaterial, additionalFilteringInfo: (node: NodeMaterialBlock) => boolean = () => true) {
         if (!this.uv.isConnected) {
-            if (material.mode === NodeMaterialModes.PostProcess) {
+            if (material.mode === NodeMaterialModes.PostProcess || material.mode === NodeMaterialModes.SFE) {
                 const uvInput = material.getBlockByPredicate((b) => b.name === "uv" && additionalFilteringInfo(b));
 
                 if (uvInput) {
