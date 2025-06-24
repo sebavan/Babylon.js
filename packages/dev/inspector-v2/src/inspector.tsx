@@ -14,6 +14,7 @@ import { MakeModularTool } from "./modularTool";
 import { DebugServiceDefinition } from "./services/panes/debugService";
 import { CommonPropertiesServiceDefinition } from "./services/panes/properties/commonPropertiesService";
 import { MeshPropertiesServiceDefinition } from "./services/panes/properties/meshPropertiesService";
+import { MaterialPropertiesServiceDefinition } from "./services/panes/properties/materialPropertiesService";
 import { NodePropertiesServiceDefinition } from "./services/panes/properties/nodePropertiesService";
 import { PropertiesServiceDefinition } from "./services/panes/properties/propertiesService";
 import { TransformNodePropertiesServiceDefinition } from "./services/panes/properties/transformNodePropertiesService";
@@ -177,6 +178,9 @@ function _ShowInspector(scene: Nullable<Scene>, options: Partial<IInspectorOptio
             NodePropertiesServiceDefinition,
             MeshPropertiesServiceDefinition,
             TransformNodePropertiesServiceDefinition,
+
+            // Material properties pane tab and related services.
+            MaterialPropertiesServiceDefinition,
 
             // Debug pane tab and related services.
             DebugServiceDefinition,
